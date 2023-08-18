@@ -16,15 +16,18 @@ impl ConfigFile {
     pub fn new() -> anyhow::Result<Self> {
         let path = "./sks.toml";
 
-        toml::from_str(&std::fs::read_to_string(path)?)
-            .map_err(|_| anyhow::anyhow!("failed to load toml"))
+        toml::from_str(
+            &std::fs::read_to_string(path)
+                .map_err(|_| anyhow::anyhow!("coudln't find sks.toml"))?,
+        )
+        .map_err(|_| anyhow::anyhow!("failed to load toml"))
     }
 
     pub fn clean(&self) -> anyhow::Result<()> {
         let mut path = home_dir().ok_or(anyhow::anyhow!("couldn't find homedir"))?;
         path.push(".sks");
         path.push(&self.name);
-        std::fs::remove_dir_all(path)?;
+        std::fs::remove_dir_all(path).map_err(|_| anyhow!("failed to remove dir"))?;
 
         Ok(())
     }
@@ -37,7 +40,8 @@ impl ConfigFile {
         path.push(".sks");
         path.push(&self.name);
 
-        std::fs::create_dir_all(&path)?;
+        std::fs::create_dir_all(&path)
+            .map_err(|_| anyhow!(format!("couldn't create dir for path {:?}", path)))?;
 
         for (name, git) in self.deps.iter() {
             let git_url = git.as_str().ok_or(anyhow::anyhow!(format!(

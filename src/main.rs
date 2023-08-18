@@ -24,6 +24,7 @@ fn main() -> anyhow::Result<()> {
         }
         Subcommands::Install => {
             let config = ConfigFile::new()?;
+            let _ = config.clean();
             let deps = config.pull_deps()?;
             inject_deps(deps)?;
             Ok(())
