@@ -12,3 +12,16 @@ sudo chmod +x sks_install
 ./sks_install
 ```
 
+# Usage
+Simply create a `sks.toml` file in the root directory
+the file layout is as such
+```toml
+name = "EpicTest"
+
+[deps]
+uniswap_v2_core = "https://github.com/Uniswap/v2-core.git"
+```
+the name of the deps are what the remapping names will be in foundry when you import them
+
+
+
