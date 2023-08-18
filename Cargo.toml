@@ -1,0 +1,16 @@
+[package]
+name = "sks"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.75"
+clap = { version = "4.3.22", features = ["derive"] }
+dirs = "5.0.1"
+home-dir = "0.1.0"
+serde = { version = "1.0.183", features = ["derive"] }
+serde_json = "1.0.105"
+toml = "0.7.6"
+foundry-config = { git = "https://github.com/foundry-rs/foundry.git" }
