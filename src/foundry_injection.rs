@@ -2,6 +2,14 @@ use foundry_config::{
     ethers_solc::remappings::{RelativeRemapping, Remapping},
     Config,
 };
+use serde::{Deserialize, Serialize};
+
+#[derive(Serialize, Deserialize)]
+pub struct FoundryConfig {
+    remappings: Vec<String>,
+    #[serde(flatten)]
+    rest: toml::Table
+}
 
 pub fn inject_deps(mappings: Vec<Remapping>) -> anyhow::Result<()> {
     let mut config = foundry_config::load_config();
