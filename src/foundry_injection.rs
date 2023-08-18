@@ -3,22 +3,17 @@ use foundry_config::{
     Config,
 };
 
-pub fn clear_deps() -> anyhow::Result<()> {
-    let mut config = foundry_config::load_config();
-    config.remappings.clear();
-    let stringed = config.to_string_pretty()?;
-    std::fs::write(Config::FILE_NAME, stringed)?;
-
-    Ok(())
-}
-
 pub fn inject_deps(mappings: Vec<Remapping>) -> anyhow::Result<()> {
     let mut config = foundry_config::load_config();
-    config.remappings.clear();
 
     mappings
         .into_iter()
-        .for_each(|r| config.remappings.push(RelativeRemapping::new(r, ".")));
+        .map(|r| RelativeRemapping::new(r, "."))
+        .for_each(|r| {
+            if !config.remappings.contains(&r) {
+                config.remappings.push(r);
+            }
+        });
 
     let stringed = config.to_string_pretty()?;
     std::fs::write(Config::FILE_NAME, stringed)?;

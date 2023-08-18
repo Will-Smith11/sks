@@ -4,7 +4,7 @@ test = "/home/will/ghq/github.com/Will-Smith11/sks/test"
 script = "/home/will/ghq/github.com/Will-Smith11/sks/script"
 out = "/home/will/ghq/github.com/Will-Smith11/sks/out"
 libs = ["/home/will/ghq/github.com/Will-Smith11/sks/lib"]
-remappings = ["uniswap_v2_core=/home/will/.sks/EpicTest/uniswap_v2_core/"]
+remappings = ["uniswap_v2_core/=/home/will/.sks/EpicTest/uniswap_v2_core/"]
 auto_detect_remappings = true
 libraries = []
 cache = true

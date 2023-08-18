@@ -56,7 +56,7 @@ impl ConfigFile {
             )?;
 
             res.push(Remapping {
-                name: name.clone(),
+                name: name.clone() + "/",
                 path: path
                     .to_str()
                     .ok_or(anyhow!("failed to convert path to str"))?

@@ -3,7 +3,7 @@ Lets face it.. Foundry submodules are terrible.
 This is a simple cli that acts as a basic package manager to avoid this
 issue
 
-## Installation
+# Installation
 Clone the repo then run our install script
 ```bash
 git clone https://github.com/Will-Smith11/sks.git
@@ -25,5 +25,9 @@ to install simply run `sks install`
 to clean out the directory run `sks clean`
 the name of the deps are what the remapping names will be in foundry when you import them
 
+
+# NOTE
+This current version will automatically place all the default config features in your foundry.toml file
+it doesn't change any values except the remappings in which it will never override these
 
 
