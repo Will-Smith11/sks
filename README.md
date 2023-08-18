@@ -21,6 +21,8 @@ name = "EpicTest"
 [deps]
 uniswap_v2_core = "https://github.com/Uniswap/v2-core.git"
 ```
+to install simply run `sks install`
+to clean out the directory run `sks clean`
 the name of the deps are what the remapping names will be in foundry when you import them
 
 
