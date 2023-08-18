@@ -14,6 +14,7 @@ pub fn clear_deps() -> anyhow::Result<()> {
 
 pub fn inject_deps(mappings: Vec<Remapping>) -> anyhow::Result<()> {
     let mut config = foundry_config::load_config();
+    config.remappings.clear();
 
     mappings
         .into_iter()
