@@ -1,0 +1,4 @@
+name = "EpicTest"
+
+[deps]
+uniswap_v2_core = "https://github.com/Uniswap/v2-core.git"
