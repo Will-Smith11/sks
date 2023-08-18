@@ -2,3 +2,4 @@ name = "EpicTest"
 
 [deps]
 uniswap_v2_core = "https://github.com/Uniswap/v2-core.git"
+uniswap_v3_core = "https://github.com/Uniswap/v3-core.git"

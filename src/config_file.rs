@@ -1,6 +1,6 @@
 use anyhow::anyhow;
 use dirs::home_dir;
-use foundry_config::ethers_solc::remappings::Remapping;
+use ethers_solc::remappings::Remapping;
 use serde::{Deserialize, Serialize};
 use toml::Table;
 

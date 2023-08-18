@@ -1,6 +1,8 @@
 [profile.default]
-src = "src"
-out = "out"
 libs = ["lib"]
-
-# See more config options https://github.com/foundry-rs/foundry/tree/master/config
+out = "out"
+remappings = [
+    "uniswap_v2_core/=/home/will/.sks/EpicTest/uniswap_v2_core/",
+    "uniswap_v3_core/=/home/will/.sks/EpicTest/uniswap_v3_core/",
+]
+src = "src"
