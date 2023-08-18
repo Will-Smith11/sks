@@ -3,6 +3,11 @@ Lets face it.. Foundry submodules are terrible.
 This is a simple cli that acts as a basic package manager to avoid this
 issue
 
+# NOTE
+This currently only works for Foundry repos. The way we store modules is still very inefficent
+and we don't do versioning. use at own risk
+
+
 # Installation
 Clone the repo then run our install script
 ```bash
@@ -26,8 +31,5 @@ to clean out the directory run `sks clean`
 the name of the deps are what the remapping names will be in foundry when you import them
 
 
-# NOTE
-This current version will automatically place all the default config features in your foundry.toml file
-it doesn't change any values except the remappings in which it will never override these
 
 
